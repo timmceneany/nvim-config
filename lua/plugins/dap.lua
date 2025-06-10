@@ -105,10 +105,12 @@ return {
       "nvim-neotest/nvim-nio",
     },
     config = function()
-      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      -- local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      local path = "/home/tmceneany/code/dagster-refdata/envs/default/bin/python"
       -- local path = "/home/tmceneany/code/meter/envs/default/bin/python"
       require("dap-python").setup(path)
       local dappy = require("dap-python")
+      vim.keymap.set("n", "<F1>", dappy.test_method)
       -- dappy.test_runner = "pytest"
       -- dappy.resolve_python = function()
       --   return "/home/tmceneany/code/meter/envs/default"
@@ -121,8 +123,6 @@ return {
       --   python = "/home/tmceneany/code/meter/envs/default/bin/",
       --   cwd = "/home/tmceneany/code/meter",
       -- })
-
-      vim.keymap.set("n", "<F1>", dappy.test_method)
     end,
   },
 }

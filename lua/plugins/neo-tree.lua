@@ -16,7 +16,7 @@ return {
       sources = { "filesystem", "buffers", "git_status", "document_symbols" },
     })
     vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal float toggle=true<CR>", {})
-    -- vim.keymap.set("n", "<C-m>", ":Neotree filesystem reveal left toggle=true<CR>", {})
+    vim.keymap.set("n", "<leader>m", ":Neotree filesystem reveal left toggle=true<CR>", {})
     vim.keymap.set("n", "<C-b>", ":Neotree buffers reveal float toggle=true<CR>", {})
     vim.keymap.set("n", "<leader>s", ":Neotree document_symbols reveal float toggle=true<CR>", {})
   end,
