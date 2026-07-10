@@ -76,6 +76,7 @@ return {
     },
     config = function()
       local path = os.getenv("PWD") .. "/envs/default/bin/python"
+      -- local path = os.getenv("PWD") .. "/envs/research/bin/python"
       require("dap-python").setup(path)
       local dappy = require("dap-python")
       vim.keymap.set("n", "<F1>", dappy.test_method)
