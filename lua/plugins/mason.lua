@@ -2,7 +2,7 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
-      ensure_installed = { "debugpy", "codelldb", "cpptools" },
+      ensure_installed = { "debugpy", "codelldb", "cpptools", "black" },
     },
     lazy = false,
     config = function()
