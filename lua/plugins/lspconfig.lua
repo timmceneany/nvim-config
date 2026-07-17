@@ -15,9 +15,11 @@ return {
     },
     config = function()
       local capabilities = require("blink.cmp").get_lsp_capabilities()
-      require("lspconfig").lua_ls.setup({ capabilities = capabilities })
-      require("lspconfig").pyright.setup({ capabilities = capabilities })
-      require("lspconfig").rust_analyzer.setup({ capabilities = capabilities })
+
+      for _, server in ipairs({ "lua_ls", "pyright", "rust_analyzer" }) do
+        vim.lsp.config(server, { capabilities = capabilities })
+        vim.lsp.enable(server)
+      end
     end,
   },
 }
